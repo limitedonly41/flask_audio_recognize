@@ -1,0 +1,28 @@
+
+{% extends "layout.html"%}
+{% block title %}
+Prediction
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <header class="text-white text-center">
+        <form method="post" action="/">
+            <button type="submit" class="btn btn-primary mb-2">HOME</button>
+        </form>
+
+        <h1 class="display-4"> Audio Recognition</h1>
+        <p class="lead mb-5">You will see the prediction of the input audio.</p>
+    </header>
+
+    <header class="text-white text-center">
+        <h1 class="display-5">Prediction</h1>
+        {% if predictions %}
+        <pre class="text-dark lead mb-5">{{predictions}}</pre>
+        {% else %}
+        <h2 class="display-4 text-dark lead mb-5">{{err}}</h2>
+        {% endif %}
+    </header>
+</div>
+{% endblock %}
